@@ -11,8 +11,8 @@ class UserInfo extends Component {
           <Card.Body>
             <Card.Title>{user.name}</Card.Title>
             <Card.Text>
-              <div>{user.phone}</div>
-              <div>{user.email}</div>
+              <p>{user.phone}</p>
+              <p>{user.email}</p>
             </Card.Text>
             <Button variant="outline-primary">Edit</Button>
           </Card.Body>

@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { Form } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
+import { showModal, hideModal } from "../actions/modalAction";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 class UserForm extends Component {
   render() {
     return (
@@ -20,11 +23,25 @@ class UserForm extends Component {
         <Form.Group controlId="formBasicChecbox">
           <Form.Check type="checkbox" label="Check me out" />
         </Form.Group>
-        <Button variant="primary" type="submit">
-          Submit
+
+        <Button variant="primary" onClick={this.props.hideModal}>
+          Save changes
         </Button>
       </Form>
     );
   }
 }
-export default UserForm;
+UserForm.propTypes = {
+  showModal: PropTypes.func.isRequired,
+  hideModal: PropTypes.func.isRequired,
+  show: PropTypes.bool.isRequired
+};
+const mapStateToProps = state => {
+  return {
+    show: state.show.show
+  };
+};
+export default connect(
+  mapStateToProps,
+  { showModal, hideModal }
+)(UserForm);
