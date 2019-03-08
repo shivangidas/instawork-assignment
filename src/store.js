@@ -1,8 +1,9 @@
 import { createStore, applyMiddleware, compose } from "redux";
 import rootReducer from "./reducers";
 import thunk from "redux-thunk";
+import data from "./data.json";
 const middleware = [thunk];
-const initialState = {};
+const initialState = { userList: data, user: {} };
 const store = createStore(
   rootReducer,
   initialState,

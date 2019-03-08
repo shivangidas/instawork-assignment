@@ -9,7 +9,12 @@ class UserInfo extends Component {
         <Card>
           <Card.Img variant="top" src={placeholder} height="100px" />
           <Card.Body>
-            <Card.Title>{user.name}</Card.Title>
+            <Card.Title>
+              {user.first_name} {user.last_name}{" "}
+              <span className="muted">
+                {user.role === "admin" ? user.role : ""}
+              </span>
+            </Card.Title>
             <Card.Text>
               <p>{user.phone}</p>
               <p>{user.email}</p>

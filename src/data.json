@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "first_name": "Shivangi",
+    "last_name": "Das",
+    "phone": "4567891234",
+    "email": "abc@example.com",
+    "role": "admin"
+  },
+  {
+    "id": 2,
+    "first_name": "Shivi",
+    "last_name": "",
+    "phone": "5456879121",
+    "email": "abc@example.com",
+    "role": "regular"
+  }
+]

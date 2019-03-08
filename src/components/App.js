@@ -27,7 +27,11 @@ class App extends Component {
           </header>
         </Row>
         <UserGrid />
-        <AddUser show={this.props.show} onHide={this.props.hideModal} />
+        <AddUser
+          show={this.props.show}
+          onHide={this.props.hideModal}
+          userId={this.props.users.length}
+        />
       </Container>
     );
   }

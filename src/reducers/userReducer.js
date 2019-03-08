@@ -15,7 +15,7 @@ export default function(state = initialState, action) {
     case NEW_USER:
       return {
         ...state,
-        user: action.payload
+        userList: [...state.userList, action.payload]
       };
     default:
       return state;

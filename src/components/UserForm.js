@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Form } from "react-bootstrap";
-import Button from "react-bootstrap/Button";
 import { showModal, hideModal } from "../actions/modalAction";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -8,25 +7,45 @@ class UserForm extends Component {
   render() {
     return (
       <Form>
-        <Form.Group controlId="formBasicEmail">
+        <input
+          type="hidden"
+          id="id"
+          value={this.props.userId}
+          ref={node => {
+            this.input = node;
+          }}
+        />
+        <Form.Group controlId="first_name">
+          <Form.Label>First name</Form.Label>
+          <Form.Control type="text" placeholder="John" />
+        </Form.Group>
+        <Form.Group controlId="last_name">
+          <Form.Label>Last name</Form.Label>
+          <Form.Control type="text" placeholder="Doe" />
+        </Form.Group>
+        <Form.Group controlId="email">
           <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" placeholder="Enter email" />
-          <Form.Text className="text-muted">
-            We'll never share your email with anyone else.
-          </Form.Text>
+          <Form.Control type="email" placeholder="sample@example.com" />
         </Form.Group>
-
-        <Form.Group controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control type="password" placeholder="Password" />
+        <Form.Group controlId="phone">
+          <Form.Label>Phone</Form.Label>
+          <Form.Control type="number" placeholder="+1234567890" />
         </Form.Group>
-        <Form.Group controlId="formBasicChecbox">
-          <Form.Check type="checkbox" label="Check me out" />
+        <Form.Group>
+          <Form.Check
+            type="radio"
+            label="Regular - Can't delete members"
+            name="role"
+            id="regular"
+            defaultChecked
+          />
+          <Form.Check
+            type="radio"
+            label="Admin - Can delete members"
+            name="role"
+            id="admin"
+          />
         </Form.Group>
-
-        <Button variant="primary" onClick={this.props.hideModal}>
-          Save changes
-        </Button>
       </Form>
     );
   }
@@ -34,11 +53,13 @@ class UserForm extends Component {
 UserForm.propTypes = {
   showModal: PropTypes.func.isRequired,
   hideModal: PropTypes.func.isRequired,
-  show: PropTypes.bool.isRequired
+  show: PropTypes.bool.isRequired,
+  users: PropTypes.object.isRequired
 };
 const mapStateToProps = state => {
   return {
-    show: state.show.show
+    show: state.show.show,
+    users: state.users.user
   };
 };
 export default connect(
