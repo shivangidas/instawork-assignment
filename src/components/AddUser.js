@@ -9,12 +9,14 @@ import PropTypes from "prop-types";
 class AddUser extends Component {
   handleSubmitClick = event => {
     event.preventDefault();
+    let { role } = this.refs.addUserForm;
     let postData = {
       id: this.props.users.length,
       first_name: this.refs.first_name.value,
       last_name: this.refs.last_name.value,
       phone: this.refs.phone.value,
-      email: this.refs.email.value
+      email: this.refs.email.value,
+      role: role.value
     };
     this.props.addUser(postData);
     this.props.hideModal();
@@ -33,7 +35,7 @@ class AddUser extends Component {
         </Modal.Header>
 
         <Modal.Body>
-          <Form>
+          <Form ref="addUserForm">
             <Form.Group controlId="first_name">
               <Form.Label>First name</Form.Label>
               <Form.Control
@@ -69,7 +71,6 @@ class AddUser extends Component {
                 type="radio"
                 label="Regular - Can't delete members"
                 name="role"
-                id="regular"
                 defaultChecked
                 value="regular"
               />
@@ -77,7 +78,6 @@ class AddUser extends Component {
                 type="radio"
                 label="Admin - Can delete members"
                 name="role"
-                id="admin"
                 value="admin"
               />
             </Form.Group>

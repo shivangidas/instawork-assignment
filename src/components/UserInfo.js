@@ -5,7 +5,7 @@ class UserInfo extends Component {
   render() {
     const { user, i } = this.props;
     return (
-      <Col xs={12} md={6} lg={4}>
+      <Col xs={12} md={6} lg={4} style={{ marginBottom: "2%" }}>
         <Card>
           <Card.Img variant="top" src={placeholder} height="100px" />
           <Card.Body>
