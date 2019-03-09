@@ -4,7 +4,6 @@ import placeholder from "../placeholder.png";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { hideEditModal, showEditModal } from "../actions/modalAction";
-import EditUser from "./EditUser";
 class UserInfo extends Component {
   handleEditClick = event => {
     this.props.showEditModal(this.props.user);
@@ -41,13 +40,11 @@ class UserInfo extends Component {
 UserInfo.propTypes = {
   hideEditModal: PropTypes.func.isRequired,
   showEdit: PropTypes.bool.isRequired,
-  showEditModal: PropTypes.func.isRequired,
-  editedUser: PropTypes.object.isRequired
+  showEditModal: PropTypes.func.isRequired
 };
 const mapStateToProps = state => {
   return {
-    showEdit: state.show.showEdit,
-    editedUser: state.show.editedUser
+    showEdit: state.show.showEdit
   };
 };
 export default connect(
