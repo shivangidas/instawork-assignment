@@ -3,7 +3,7 @@ import rootReducer from "./reducers";
 import thunk from "redux-thunk";
 import data from "./data.json";
 const middleware = [thunk];
-const initialState = { userList: data, user: {} };
+const initialState = { userList: data };
 const store = createStore(
   rootReducer,
   initialState,

@@ -7,7 +7,7 @@ import { hideEditModal, showEditModal } from "../actions/modalAction";
 import EditUser from "./EditUser";
 class UserInfo extends Component {
   render() {
-    const { user, i } = this.props;
+    const { user } = this.props;
     return (
       <>
         <Col xs={12} md={6} lg={4} style={{ marginBottom: "2%" }}>
@@ -21,8 +21,9 @@ class UserInfo extends Component {
                 </span>
               </Card.Title>
               <Card.Text>
-                <p>{user.phone}</p>
-                <p>{user.email}</p>
+                <span>{user.phone}</span>
+                <br />
+                <span>{user.email}</span>
               </Card.Text>
               <Button
                 variant="outline-primary"

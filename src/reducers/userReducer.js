@@ -6,8 +6,7 @@ import {
 } from "../actions/types";
 
 const initialState = {
-  userList: [],
-  user: {}
+  userList: []
 };
 
 export default function(state = initialState, action) {

@@ -2,11 +2,10 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { fetchUsers } from "../actions/userAction";
-import { showModal, showEditModal } from "../actions/modalAction";
+import { showModal } from "../actions/modalAction";
 import { Button, Container, Row, Col } from "react-bootstrap";
 import UserGrid from "./UserGrid";
 import AddUser from "./AddUser";
-import EditUser from "./EditUser";
 class App extends Component {
   componentWillMount() {
     this.props.fetchUsers();

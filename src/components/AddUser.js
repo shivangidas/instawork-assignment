@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import UserForm from "./UserForm";
 import { showModal, hideModal } from "../actions/modalAction";
 import { addUser } from "../actions/userAction";
 import { Modal, Button, Form } from "react-bootstrap";
