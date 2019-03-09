@@ -1,14 +1,14 @@
 {
-  "main.css": "/buildATeam/static/css/main.e70886c9.chunk.css",
-  "main.js": "/buildATeam/static/js/main.fa228501.chunk.js",
-  "main.js.map": "/buildATeam/static/js/main.fa228501.chunk.js.map",
-  "runtime~main.js": "/buildATeam/static/js/runtime~main.f5580557.js",
-  "runtime~main.js.map": "/buildATeam/static/js/runtime~main.f5580557.js.map",
-  "static/js/2.b1b8931a.chunk.js": "/buildATeam/static/js/2.b1b8931a.chunk.js",
-  "static/js/2.b1b8931a.chunk.js.map": "/buildATeam/static/js/2.b1b8931a.chunk.js.map",
-  "index.html": "/buildATeam/index.html",
-  "precache-manifest.4cc6b2636b9f692febe501762732ade7.js": "/buildATeam/precache-manifest.4cc6b2636b9f692febe501762732ade7.js",
-  "service-worker.js": "/buildATeam/service-worker.js",
-  "static/css/main.e70886c9.chunk.css.map": "/buildATeam/static/css/main.e70886c9.chunk.css.map",
-  "static/media/placeholder.png": "/buildATeam/static/media/placeholder.4788048f.png"
+  "main.css": "/instawork-assignment/static/css/main.e70886c9.chunk.css",
+  "main.js": "/instawork-assignment/static/js/main.ee1c2760.chunk.js",
+  "main.js.map": "/instawork-assignment/static/js/main.ee1c2760.chunk.js.map",
+  "runtime~main.js": "/instawork-assignment/static/js/runtime~main.99ca9cac.js",
+  "runtime~main.js.map": "/instawork-assignment/static/js/runtime~main.99ca9cac.js.map",
+  "static/js/2.b1b8931a.chunk.js": "/instawork-assignment/static/js/2.b1b8931a.chunk.js",
+  "static/js/2.b1b8931a.chunk.js.map": "/instawork-assignment/static/js/2.b1b8931a.chunk.js.map",
+  "index.html": "/instawork-assignment/index.html",
+  "precache-manifest.5018835d349e342e2609a78fae3bca30.js": "/instawork-assignment/precache-manifest.5018835d349e342e2609a78fae3bca30.js",
+  "service-worker.js": "/instawork-assignment/service-worker.js",
+  "static/css/main.e70886c9.chunk.css.map": "/instawork-assignment/static/css/main.e70886c9.chunk.css.map",
+  "static/media/placeholder.png": "/instawork-assignment/static/media/placeholder.4788048f.png"
 }
