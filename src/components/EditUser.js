@@ -8,9 +8,10 @@ import PropTypes from "prop-types";
 class EditUser extends Component {
   handleSubmitClick = event => {
     event.preventDefault();
+    console.log(this.props.editedUser.id);
     let { role } = this.refs.editUserForm;
     let postData = {
-      id: this.props.user.id,
+      id: this.props.editedUser.id,
       first_name: this.refs.first_name.value,
       last_name: this.refs.last_name.value,
       phone: this.refs.phone.value,
@@ -23,11 +24,12 @@ class EditUser extends Component {
   handleDeleteClick = event => {
     event.preventDefault();
     console.log("in delete click");
-    this.props.deleteUser(this.props.user.id);
+    this.props.deleteUser(this.props.editedUser.id);
     this.props.hideEditModal();
   };
   render() {
-    const { user } = this.props;
+    const user = this.props.editedUser;
+    console.log(user.id);
     return (
       <Modal show={this.props.showEdit} onHide={this.props.hideEditModal}>
         <Modal.Header closeButton>
@@ -101,7 +103,7 @@ class EditUser extends Component {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          {this.props.user.role === "admin" ? (
+          {this.props.editedUser.role === "admin" ? (
             <Button variant="outline-danger" onClick={this.handleDeleteClick}>
               Delete
             </Button>
@@ -125,12 +127,14 @@ EditUser.propTypes = {
   hideEditModal: PropTypes.func.isRequired,
   showEdit: PropTypes.bool.isRequired,
   editUser: PropTypes.func.isRequired,
-  deleteUser: PropTypes.func.isRequired
+  deleteUser: PropTypes.func.isRequired,
+  editedUser: PropTypes.object.isRequired
 };
 const mapStateToProps = state => {
   return {
     showEdit: state.show.showEdit,
-    users: state.users
+    users: state.users,
+    editedUser: state.show.editedUser
   };
 };
 export default connect(
