@@ -2,10 +2,11 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { fetchUsers } from "../actions/userAction";
-import { showModal } from "../actions/modalAction";
+import { showModal, showEditModal } from "../actions/modalAction";
 import { Button, Container, Row, Col } from "react-bootstrap";
 import UserGrid from "./UserGrid";
 import AddUser from "./AddUser";
+import EditUser from "./EditUser";
 class App extends Component {
   componentWillMount() {
     this.props.fetchUsers();
@@ -14,7 +15,7 @@ class App extends Component {
     return (
       <Container className="App">
         <Row className="justify-content-md-center">
-          <Col xs={{ span: 2, offset: 10 }}>
+          <Col xs={{ span: 2, offset: 10 }} style={{ marginTop: "2%" }}>
             <Button variant="primary" onClick={this.props.showModal}>
               Add
             </Button>

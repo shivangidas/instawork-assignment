@@ -7,14 +7,7 @@ class UserForm extends Component {
   render() {
     return (
       <Form>
-        <input
-          type="hidden"
-          id="id"
-          value={this.props.userId}
-          ref={node => {
-            this.input = node;
-          }}
-        />
+        <input type="hidden" id="id" value={this.props.userId} ref="id" />
         <Form.Group controlId="first_name">
           <Form.Label>First name</Form.Label>
           <Form.Control type="text" placeholder="John" />
@@ -36,14 +29,14 @@ class UserForm extends Component {
             type="radio"
             label="Regular - Can't delete members"
             name="role"
-            id="regular"
+            value="regular"
             defaultChecked
           />
           <Form.Check
             type="radio"
             label="Admin - Can delete members"
             name="role"
-            id="admin"
+            value="admin"
           />
         </Form.Group>
       </Form>
@@ -59,7 +52,7 @@ UserForm.propTypes = {
 const mapStateToProps = state => {
   return {
     show: state.show.show,
-    users: state.users.user
+    users: state.users.userList
   };
 };
 export default connect(

@@ -1,7 +1,13 @@
-import { SHOW_MODAL, HIDE_MODAL } from "../actions/types";
+import {
+  SHOW_MODAL,
+  HIDE_MODAL,
+  SHOW_EDIT_MODAL,
+  HIDE_EDIT_MODAL
+} from "../actions/types";
 
 const initialState = {
-  show: false
+  show: false,
+  showEdit: false
 };
 
 export default function(state = initialState, action) {
@@ -15,6 +21,16 @@ export default function(state = initialState, action) {
       return {
         ...state,
         show: action.payload
+      };
+    case SHOW_EDIT_MODAL:
+      return {
+        ...state,
+        showEdit: action.payload
+      };
+    case HIDE_EDIT_MODAL:
+      return {
+        ...state,
+        showEdit: action.payload
       };
     default:
       return state;
