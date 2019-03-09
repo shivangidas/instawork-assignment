@@ -7,7 +7,8 @@ import {
 
 const initialState = {
   show: false,
-  showEdit: false
+  showEdit: false,
+  editedUser: {}
 };
 
 export default function(state = initialState, action) {
@@ -25,7 +26,8 @@ export default function(state = initialState, action) {
     case SHOW_EDIT_MODAL:
       return {
         ...state,
-        showEdit: action.payload
+        showEdit: action.payload,
+        editedUser: action.editedUser
       };
     case HIDE_EDIT_MODAL:
       return {

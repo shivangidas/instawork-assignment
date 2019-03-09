@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import UserForm from "./UserForm";
 import { showModal, hideModal } from "../actions/modalAction";
 import { addUser } from "../actions/userAction";
 import { Modal, Button, Form } from "react-bootstrap";
@@ -11,7 +10,7 @@ class AddUser extends Component {
     event.preventDefault();
     let { role } = this.refs.addUserForm;
     let postData = {
-      id: this.props.users.length,
+      id: this.props.users.userList.length + 1,
       first_name: this.refs.first_name.value,
       last_name: this.refs.last_name.value,
       phone: this.refs.phone.value,

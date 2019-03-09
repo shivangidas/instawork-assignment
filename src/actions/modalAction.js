@@ -20,11 +20,12 @@ export function hideModal() {
     });
   };
 }
-export function showEditModal() {
+export function showEditModal(user) {
   return function(dispatch) {
     dispatch({
       type: SHOW_EDIT_MODAL,
-      payload: true
+      payload: true,
+      editedUser: user
     });
   };
 }

@@ -6,8 +6,11 @@ import { connect } from "react-redux";
 import { hideEditModal, showEditModal } from "../actions/modalAction";
 import EditUser from "./EditUser";
 class UserInfo extends Component {
+  handleEditClick = event => {
+    this.props.showEditModal(this.props.user);
+  };
   render() {
-    const { user, i } = this.props;
+    const { user } = this.props;
     return (
       <>
         <Col xs={12} md={6} lg={4} style={{ marginBottom: "2%" }}>
@@ -21,23 +24,16 @@ class UserInfo extends Component {
                 </span>
               </Card.Title>
               <Card.Text>
-                <p>{user.phone}</p>
-                <p>{user.email}</p>
+                <span>{user.phone}</span>
+                <br />
+                <span>{user.email}</span>
               </Card.Text>
-              <Button
-                variant="outline-primary"
-                onClick={this.props.showEditModal}
-              >
+              <Button variant="outline-primary" onClick={this.handleEditClick}>
                 Edit
               </Button>
             </Card.Body>
           </Card>
         </Col>
-        <EditUser
-          show={this.props.showEdit}
-          onHide={this.props.hideEditModal}
-          user={this.props.user}
-        />
       </>
     );
   }
@@ -45,11 +41,13 @@ class UserInfo extends Component {
 UserInfo.propTypes = {
   hideEditModal: PropTypes.func.isRequired,
   showEdit: PropTypes.bool.isRequired,
-  showEditModal: PropTypes.func.isRequired
+  showEditModal: PropTypes.func.isRequired,
+  editedUser: PropTypes.object.isRequired
 };
 const mapStateToProps = state => {
   return {
-    showEdit: state.show.showEdit
+    showEdit: state.show.showEdit,
+    editedUser: state.show.editedUser
   };
 };
 export default connect(
